@@ -14,9 +14,18 @@ images.forEach(image => {
     lightbox.classList.add('active')
     const img = document.createElement('img')
 
-    img.src = image.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    // var tempImg = img.src = image.style.backgroundImage.slice(4, -1).replace(/"/g, "images_HD/");
+    var imgSrc = image.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    var imgSrc1 = imgSrc.slice(0,6);
+    var imgSrc2 = imgSrc.slice(6)
+    var imgSrc_string = imgSrc1 + "_HD" + imgSrc2;
 
-    console.log(img.src);
+    // img.src = image.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    img.src = imgSrc_string;
+    // console.log(image.style.backgroundImage.slice(4, -1).replace(/"/g, ""));
+    // console.log(img.src);
+    // console.log(imgSrc_string);
+
 
     while (lightbox.firstChild) {
       lightbox.removeChild(lightbox.firstChild)
