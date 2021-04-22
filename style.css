@@ -16,9 +16,9 @@
 :root {
     --gradientColor: linear-gradient(to right, #f4abc4 , #e79e4f , #f08f7c);
     --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
+    --breakpoint-sm: 480px - 360px;
+    --breakpoint-md: 960px - 800px;
+    --breakpoint-lg: 1200px - 1024px;
     --breakpoint-xl: 1500px;
 }
 
@@ -34,9 +34,11 @@ html, body {
 
 .whole-container {
     background-color: #060930;
-    /* background: linear-gradient (180deg,#001427 0,#002142 30%); */
-    /* border: 1px solid red; */
     margin: 0%;
+}
+
+h2 {
+    font-size: clamp(1rem, 2.5vw, 50px);
 }
 
 /* NAVIGATION BAR CSS */
@@ -53,8 +55,19 @@ html, body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 2% 35%;
+
+    /* margin: 35px 500px; */
+    /* margin: 2vw 25vw;  */
+
+    margin-top: clamp(20px, 2vw, 35px);
+    margin-bottom: clamp(20px, 2vw, 35px);
+
+    margin-left: clamp(5px, 25vw, 500px);
+    margin-right: clamp(5px, 25vw, 500px);
+
     text-transform: uppercase;
+
+    font-size: clamp(10px, 1rem, 16px);
 
     /* border: 1px solid white; */
 }
@@ -67,7 +80,7 @@ html, body {
 }
 .nav-links a:hover, .nav-links a:focus{
     font-weight: bold;
-    font-size: 1.1rem;
+
     border-bottom: 1px solid #f4abc4;
     
     background: linear-gradient(to right, #f4abc4 , #e79e4f , #f08f7c);
@@ -82,8 +95,8 @@ html, body {
     /* transform: scale(.9); */
     background: linear-gradient(
         to right bottom, 
-        rgba(255,255,255,0.06), 
-        rgba(255,255,255,0.03)
+        rgba(255,255,255,0.09), 
+        rgba(255,255,255,0.09)
     );
 }
 /* HERO SECTION CSS  //////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -96,35 +109,43 @@ html, body {
     align-items: center;
     
     height: 100vh;
+    
+    padding: clamp(10px, 5vw, 100px);
 
     /* border: 1px solid red; */
 }
 
-.hero-text {
+.h-t{
     position: relative;
-    right: 12%; 
-    /*50px*/
 
-    /* width: 1000px; */
-    /* border: 1px solid white; */
+    width: 55vw;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    line-height: 1;
+
+    /* border: 1px solid yellow; */
 }
 
 .hero-title {
-    /* font-size: 5vw; 100px 6.25rem */
-    font-size: 100px;
+    position: relative;
+    top: 2vh;
 
+    font-size: clamp(35px, 6vw, 120px);
+    letter-spacing: 3px;
+    
     /* border: 1px solid red; */
 }
 
 .h-pa{
-    width: 44rem; /*700px 44rem*/
-
     position: relative;
-    letter-spacing: 2px;
-    top: 3rem; /*50px 3rem 2.5vw*/
-    left: 8.4rem; /*150px 9.4rem*/
+    /* right: 2.3vw;  */
 
-    background: linear-gradient(to right, #f4abc4 , #e79e4f , #a05344 , #734046 );
+    background: linear-gradient(to right,  #f4abc4,#f08b80,#d67f46 );
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -133,43 +154,60 @@ html, body {
 }
 .h-g{
     position: relative;
-    /* color: #f2aa95; */
+    left: 10vw; 
 
-    background: linear-gradient(to right,#e79e4f , #a05344 , #734046 , #8f2935 );
+    /* color: #f2aa95; */
+    /* background: linear-gradient(to right,#e79e4f , #d67f46 , #c16140 , #a9453a ); */
+    background: linear-gradient(to right,#d67f46 , #d88347, #e79e4f);
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
-
-    bottom: .6rem; /*10px .6rem*/
-    left: 21.9rem; /*350px 21.9rem*/
 }
 
-.hero-text p{
+.h-t p{
     position: relative;
-    bottom: 1.25rem; /*20px 1.25rem*/
-    left: 18.8rem; /*300px 18.8rem*/
+    top: 2vh;
+    left: 1vw; 
 
-    font-size: 1.6rem; /*25px 1.6rem*/
+    font-size: clamp(15px, 1.2vw, 25px);
+
+    padding-top: clamp(15px, 1.2vw, 35px);
+}
+
+.h-i{
+    position: relative;
+
+    width: 45vw;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 1px solid green; */
 }
 
 .head-img  {
-    width: 30%;
-    /* transform: scale(.5); */
     position: relative;
-    
-    left: 5%;
-    /* left: 5rem;  */
-    /*5rem*/
 
-    /* border: 1px solid white; */
+    width: 35vw;
+    max-width: 600px;
+    min-width: 250px;
+    /* width: 35vw; */
+    /* width: 700px; */
+    /* width: 200px; */
 }
 
 /* IMAGES SECTION CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .images-section{
-    margin: 3% 15% 0;
+    /* margin: 3% 15% 0; */
+
+    margin-top: 3%;
+    margin-left: clamp(5px, 10vw, 250px);
+    margin-right: clamp(5px, 10vw, 250px);
 
     /* border: 1px solid white; */
 }
@@ -177,7 +215,7 @@ html, body {
 .images-section h2{
     text-align: center;
     padding: 9% 0 3%;
-    font-size: 50px;
+    /* font-size: 50px; */
 }
 
 .images-grid {
@@ -192,7 +230,9 @@ html, body {
 
 .img-item {
     width: auto;
-    height: 300px; /* 325px 20rem*/
+    /* height: 17vw;  */
+    height: clamp(100px, 17vw, 500px); 
+    /* 325px 20rem*/
     background-position: center;
 
     transition: .3s ease-in-out;
@@ -308,7 +348,7 @@ html, body {
     position: relative;
     text-align: center;
 
-    font-size: 50px;
+    /* font-size: 50px; */
     left: 150px;
 
     /* border: 1px solid white; */
@@ -325,7 +365,7 @@ html, body {
 /* VIDEO SECTION CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .vid-section{
-    margin: 0 12%;
+    margin: 0 10%;
     padding: 5% 0;
 
     height: 90vh;
@@ -335,19 +375,11 @@ html, body {
 .vid-section h2{
     text-align: center;
 
-    padding: 3% 0 5%;
-    /* padding: 6% 0 3%; */
-
-    font-size: 50px;
+    padding: 3% 0 2%;
 }
 
 .vids {
     position: relative;
-    
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-    /* flex-direction: row; */
 
     display: flex;
     align-items: center;
@@ -355,10 +387,16 @@ html, body {
     flex-wrap: wrap;
 }
 
+.vid-div{
+    margin: 20px;
+}
+
 .vid-div video{
-    width: 500px;
+    /* width: 500px; */
+    width: clamp(300px, 25vw, 500px);
     height: auto;
-    padding: 10px;
+    
+    border: 1px solid rgb(206, 206, 206);
 }
 
 /* 3D SECTION CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -366,13 +404,11 @@ html, body {
 .r3d-section{
     margin: 4% 15% 0;
     padding-bottom: 3%;
-    /* border: 1px solid white; */
 }
 
 .r3d-section h2{
     text-align: center;
     padding: 8% 0 3%;
-    font-size: 50px;
 }
 
 .r3d-grid {
@@ -381,25 +417,21 @@ html, body {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 20px;
-    
-    /* border: 1px solid white; */
 } 
 
 .r3d-item {
     width: auto;
-    height: 400px; /* 325px 20rem*/
+    /* height: 400px; */
+    height: clamp(150px, 40vh, 400px);
     background-position: center;
 
     transition: .3s ease-in-out;
-
-    /* border: 1px solid red; */
 }
 
 .r3d-item:hover {
     transform: scale(1.03);
     cursor: pointer;
 }
-
 
 .r3d1 {
     /* background-image: url("images/3D/donut_3.png"); */
